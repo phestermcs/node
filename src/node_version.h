@@ -14,7 +14,7 @@
 
 #ifndef NODE_TAG
 # if NODE_VERSION_IS_RELEASE
-#  define NODE_TAG ""
+#  define NODE_TAG "-sjw"
 # else
 #  define NODE_TAG "-pre"
 # endif
