@@ -182,11 +182,6 @@ const char* openssl_config = nullptr;
 bool no_process_warnings = false;
 bool trace_warnings = false;
 
-// Set in node.cc by ParseArgs when --preserve-symlinks is used.
-// Used in node_config.cc to set a constant on process.binding('config')
-// that is used by lib/module.js
-bool config_preserve_symlinks = false;
-
 bool v8_initialized = false;
 
 // process-relative uptime base, initialized at start-up
@@ -3599,8 +3594,6 @@ static void PrintHelp() {
          "                        note: linked-in ICU data is\n"
          "                        present.\n"
 #endif
-         "  --preserve-symlinks   preserve symbolic links when resolving\n"
-         "                        and caching modules.\n"
 #endif
          "\n"
          "Environment variables:\n"
@@ -3730,8 +3723,6 @@ static void ParseArgs(int* argc,
     } else if (strncmp(arg, "--security-revert=", 18) == 0) {
       const char* cve = arg + 18;
       Revert(cve);
-    } else if (strcmp(arg, "--preserve-symlinks") == 0) {
-      config_preserve_symlinks = true;
     } else if (strcmp(arg, "--prof-process") == 0) {
       prof_process = true;
       short_circuit = true;
