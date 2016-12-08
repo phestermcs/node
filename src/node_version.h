@@ -3,7 +3,7 @@
 
 #define NODE_MAJOR_VERSION 7
 #define NODE_MINOR_VERSION 2
-#define NODE_PATCH_VERSION 0
+#define NODE_PATCH_VERSION 100
 
 #define NODE_VERSION_IS_RELEASE 1
 
@@ -14,7 +14,7 @@
 
 #ifndef NODE_TAG
 # if NODE_VERSION_IS_RELEASE
-#  define NODE_TAG "-sjw"
+#  define NODE_TAG ""
 # else
 #  define NODE_TAG "-pre"
 # endif
